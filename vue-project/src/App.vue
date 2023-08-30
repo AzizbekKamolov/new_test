@@ -5,6 +5,7 @@
 <template>
   <div>
     Hello world
+    <button class="btn btn-success">salom</button>
   </div>
 </template>
 

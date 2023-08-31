@@ -6,6 +6,8 @@
         <SearchPanel/>
         <AppFilter/>
       </div>
+      <MovieList/>
+      <MovieAddForm/>
     </div>
   </div>
 </template>
@@ -15,12 +17,14 @@ import ApplicationInfo from '../app-info/ApplicationInfo.vue';
 import SearchPanel from '../serach-panel/SearchPanel.vue';
 import AppFilter from '../app-filtr/AppFilter.vue';
 import MovieList from '../movie-list/MovieList.vue';
+import MovieAddForm from '../movie-add-form/MovieAddForm.vue';
 export default{
   components:{
     ApplicationInfo,
     SearchPanel,
     AppFilter,
-    MovieList
+    MovieList,
+    MovieAddForm
   }
 }
 </script>
@@ -40,7 +44,7 @@ export default{
   .search-panel{
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #fcf5f5;
+    background-color: #fcfaf5;
     border-radius: 4px;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, .15);
   }

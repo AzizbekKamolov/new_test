@@ -69,12 +69,12 @@ export default {
     onToggleHandler({id, prop}) {
       this.movies.map((item) => {
         if (item.id == id) {
-          return {...item, [prop]: !item[prop]}
-          // if(prop == 'like'){
-          //   item.like = !item.like;
-          // }else{
-          //   item.favourite = !item.favourite;
-          // }
+          // return {...item, [prop]:!item[prop]}
+          if(prop == 'like'){
+            item.like = !item.like;
+          }else{
+            item.favourite = !item.favourite;
+          }
         }
         return item;
       });

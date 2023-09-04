@@ -1,29 +1,38 @@
 <template>
-    <ul class="movie-list list-grup">
-      <MovieListItem/>
-      <MovieListItem/>
-      <MovieListItem/>
-      <MovieListItem/>
-      <MovieListItem/>
-   
-    </ul>
+  <ul class="movie-list list-grup">
+    <MovieListItem
+      v-for="movie in movies"
+      v-bind:movie="movie"
+      :key="movie.id"
+      @onToggle="$emit('onToggle', $event)"
+      @onFavourite="$emit('onFavourite', $emit)"
+    />
+  </ul>
 </template>
 <script>
-import MovieListItem from '@/components/movie-list-item/MovieListItem.vue';
+import MovieListItem from "@/components/movie-list-item/MovieListItem.vue";
 
 export default {
-    components:{
+  components: {
     MovieListItem,
-    MovieListItem,
-}
-}
+  },
+  props: {
+    movies: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 <style scoped>
-.movie-list{
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: #fcfaf5;
-    border-radius: 4px;
-    box-shadow: 15px 15px 15px rgba(0, 0, 0, .15);
+.movie-list {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fcfaf5;
+  border-radius: 4px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
 }
 </style>
